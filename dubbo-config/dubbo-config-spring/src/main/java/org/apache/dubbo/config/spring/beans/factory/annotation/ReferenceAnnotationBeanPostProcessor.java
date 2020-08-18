@@ -52,7 +52,6 @@ import static org.springframework.util.StringUtils.hasText;
  *
  * @see DubboReference
  * @see Reference
- * @see com.alibaba.dubbo.config.annotation.Reference
  * @since 2.5.7
  */
 public class ReferenceAnnotationBeanPostProcessor extends AbstractAnnotationBeanPostProcessor implements
@@ -80,12 +79,11 @@ public class ReferenceAnnotationBeanPostProcessor extends AbstractAnnotationBean
     private ApplicationContext applicationContext;
 
     /**
-     * {@link com.alibaba.dubbo.config.annotation.Reference @com.alibaba.dubbo.config.annotation.Reference} has been supported since 2.7.3
      * <p>
      * {@link DubboReference @DubboReference} has been supported since 2.7.7
      */
     public ReferenceAnnotationBeanPostProcessor() {
-        super(DubboReference.class, Reference.class, com.alibaba.dubbo.config.annotation.Reference.class);
+        super(DubboReference.class, Reference.class);
     }
 
     /**

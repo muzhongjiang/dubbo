@@ -31,7 +31,6 @@ import static org.apache.dubbo.common.utils.StringUtils.isEmpty;
  * The resolver class for {@link Service @Service}
  *
  * @see Service
- * @see com.alibaba.dubbo.config.annotation.Service
  * @since 2.7.6
  */
 public class ServiceAnnotationResolver {
@@ -48,15 +47,9 @@ public class ServiceAnnotationResolver {
     private Annotation getServiceAnnotation(Class<?> serviceType) {
 
         Annotation serviceAnnotation = serviceType.getAnnotation(Service.class);
-
         if (serviceAnnotation == null) {
-            serviceAnnotation = serviceType.getAnnotation(com.alibaba.dubbo.config.annotation.Service.class);
-        }
-
-        if (serviceAnnotation == null) {
-            throw new IllegalArgumentException(format("@%s or @%s can't be found in the service type[%s].",
+            throw new IllegalArgumentException(format("@%s  can't be found in the service type[%s].",
                     Service.class.getName(),
-                    com.alibaba.dubbo.config.annotation.Service.class.getName(),
                     serviceType.getName()
             ));
         }

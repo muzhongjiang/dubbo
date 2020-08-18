@@ -94,9 +94,7 @@ public class ServiceClassPostProcessor implements BeanDefinitionRegistryPostProc
             // @since 2.7.7 Add the @DubboService , the issue : https://github.com/apache/dubbo/issues/6007
             DubboService.class,
             // @since 2.7.0 the substitute @com.alibaba.dubbo.config.annotation.Service
-            Service.class,
-            // @since 2.7.3 Add the compatibility for legacy Dubbo's @Service , the issue : https://github.com/apache/dubbo/issues/4330
-            com.alibaba.dubbo.config.annotation.Service.class
+            Service.class
     );
 
     private final Logger logger = LoggerFactory.getLogger(getClass());

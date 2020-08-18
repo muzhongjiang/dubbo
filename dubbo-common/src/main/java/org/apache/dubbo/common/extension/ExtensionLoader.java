@@ -271,10 +271,7 @@ public class ExtensionLoader<T> {
                 if (activate instanceof Activate) {
                     activateGroup = ((Activate) activate).group();
                     activateValue = ((Activate) activate).value();
-                } else if (activate instanceof com.alibaba.dubbo.common.extension.Activate) {
-                    activateGroup = ((com.alibaba.dubbo.common.extension.Activate) activate).group();
-                    activateValue = ((com.alibaba.dubbo.common.extension.Activate) activate).value();
-                } else {
+                }else {
                     continue;
                 }
                 if (isMatchGroup(group, activateGroup)
@@ -951,12 +948,6 @@ public class ExtensionLoader<T> {
         Activate activate = clazz.getAnnotation(Activate.class);
         if (activate != null) {
             cachedActivates.put(name, activate);
-        } else {
-            // support com.alibaba.dubbo.common.extension.Activate
-            com.alibaba.dubbo.common.extension.Activate oldActivate = clazz.getAnnotation(com.alibaba.dubbo.common.extension.Activate.class);
-            if (oldActivate != null) {
-                cachedActivates.put(name, oldActivate);
-            }
         }
     }
 

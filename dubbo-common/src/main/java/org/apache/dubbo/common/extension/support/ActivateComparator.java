@@ -105,12 +105,6 @@ public class ActivateComparator implements Comparator<Object> {
             info.before = activate.before();
             info.after = activate.after();
             info.order = activate.order();
-        } else {
-            com.alibaba.dubbo.common.extension.Activate activate = clazz.getAnnotation(
-                    com.alibaba.dubbo.common.extension.Activate.class);
-            info.before = activate.before();
-            info.after = activate.after();
-            info.order = activate.order();
         }
         return info;
     }
