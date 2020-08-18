@@ -363,11 +363,11 @@
                 <artifactId>dubbo-serialization-protobuf</artifactId>
                 <version>${project.version}</version>
             </dependency>
-            <dependency>
-                <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo-compatible</artifactId>
-                <version>${project.version}</version>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>org.apache.dubbo</groupId>-->
+<!--                <artifactId>dubbo-compatible</artifactId>-->
+<!--                <version>${project.version}</version>-->
+<!--            </dependency>-->
             <!-- metadata -->
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
